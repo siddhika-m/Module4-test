@@ -1,0 +1,81 @@
+# --------------------------------------------------------------------
+# Composer dependencies
+# --------------------------------------------------------------------
+/vendor/
+
+# --------------------------------------------------------------------
+# Drupal core & contrib (managed by Composer, don't commit)
+# --------------------------------------------------------------------
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# --------------------------------------------------------------------
+# Site files (public/private)
+# --------------------------------------------------------------------
+/web/sites/*/files
+/web/sites/*/private
+/private/
+
+# Keep default settings template
+!/web/sites/default/default.settings.php
+!/web/sites/default/default.services.yml
+
+# --------------------------------------------------------------------
+# Environment-specific configs
+# --------------------------------------------------------------------
+/web/sites/*/settings*.php
+/web/sites/*/settings.local.php
+/web/sites/*/services*.yml
+!/web/sites/*/services.yml
+
+# --------------------------------------------------------------------
+# IDE / editor / OS junk
+# --------------------------------------------------------------------
+.idea/
+*.swp
+*.*~
+.vim
+.DS_Store*
+Thumbs.db
+ehthumbs.db
+
+# --------------------------------------------------------------------
+# Node & frontend dependencies
+# --------------------------------------------------------------------
+node_modules/
+*/node_modules/
+bower_components/
+package-lock.json
+yarn.lock
+
+# --------------------------------------------------------------------
+# Drush / Pantheon generated files
+# --------------------------------------------------------------------
+/drush/Commands/contrib/
+/web/private/scripts/quicksilver
+/.drush-lock-update
+
+# --------------------------------------------------------------------
+# Scaffold generated files
+# --------------------------------------------------------------------
+/.editorconfig
+/.gitattributes
+/web/**/.gitignore
+
+# --------------------------------------------------------------------
+# Custom code - keep in Git!
+# --------------------------------------------------------------------
+!web/modules/custom/
+!web/themes/custom/
+!web/profiles/custom/
+
+# --------------------------------------------------------------------
+# Misc
+# --------------------------------------------------------------------
+LICENSE.txt
+backup.sql.gz
+recipes/
+pvt/
