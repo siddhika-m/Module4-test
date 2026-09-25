@@ -12,7 +12,7 @@ _core:
   default_config_hash: gmxYWWHmgbe0Pnv8y48ZLSLH5mEHejOjAP6RLxUfdzU
 id: olivero_account_menu
 theme: olivero
-region: secondary_menu
+region: primary_menu
 weight: -4
 provider: null
 plugin: 'system_menu_block:account'

@@ -12,8 +12,8 @@ _core:
   default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
 id: olivero_main_menu
 theme: olivero
-region: primary_menu
-weight: 0
+region: hero
+weight: -5
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -23,5 +23,5 @@ settings:
   provider: system
   level: 1
   depth: 2
-  expand_all_items: true
+  expand_all_items: false
 visibility: {  }

@@ -1,0 +1,90 @@
+uuid: dae96678-b390-4a1d-9f72-cb7cc9e319c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.field_blog_body
+    - field.field.node.blog.field_tags
+    - node.type.blog
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          5060d51d-5fbf-409a-9f93-23b8f5dbb353:
+            uuid: 5060d51d-5fbf-409a-9f93-23b8f5dbb353
+            region: content
+            configuration:
+              id: 'extra_field_block:node:blog:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 5
+            additional: {  }
+          2abf2832-d101-494f-8cf5-187bd68e52a3:
+            uuid: 2abf2832-d101-494f-8cf5-187bd68e52a3
+            region: content
+            configuration:
+              id: 'field_block:node:blog:field_blog_body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: smart_trim
+                label: above
+                settings:
+                  trim_length: 50
+                  trim_type: words
+                  trim_suffix: ''
+                  wrap_output: false
+                  wrap_class: trimmed
+                  more:
+                    display_link: true
+                    target_blank: false
+                    link_trim_only: true
+                    class: more-link
+                    text: 'Read more'
+                    aria_label: 'Read more about [node:title]'
+                  summary_handler: full
+                  trim_options:
+                    text: false
+                    trim_zero: false
+                    replace_tokens: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          d0660af9-4110-4c49-8d80-c17af885a0ab:
+            uuid: d0660af9-4110-4c49-8d80-c17af885a0ab
+            region: content
+            configuration:
+              id: 'field_block:node:blog:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content: {  }
+hidden:
+  field_blog_body: true
+  field_tags: true
+  links: true

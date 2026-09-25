@@ -1,0 +1,5 @@
+name: 'Blog Data'
+type: module
+description: 'This module is used for exposing the blog data.'
+package: Custom
+core_version_requirement: ^10 || ^11

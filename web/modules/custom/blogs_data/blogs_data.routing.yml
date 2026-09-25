@@ -1,0 +1,15 @@
+blogs_data.blogs:
+  path: '/blogs/{filter_type}/{filter_value}'
+  defaults:
+    _controller: 'Drupal\blogs_data\Controller\BlogsDataController::getBlogsData'
+    _title: 'Blogs Data'
+  requirements:
+    _permission: 'access content'
+
+blogs_data.date:
+  path: '/blogs/date/{start_date}/{end_date}'
+  defaults:
+    _controller: 'Drupal\blogs_data\Controller\BlogsDataController::getBlogsDate'
+    _title: 'Blogs Data according to Date Range'
+  requirements:
+    _permission: 'access content'
