@@ -1,0 +1,5 @@
+name: Blog Like
+type: module
+description: Provides a like button for blog posts.
+core_version_requirement: ^11
+package: Custom

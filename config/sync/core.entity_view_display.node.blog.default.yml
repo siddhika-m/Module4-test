@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.blog.field_blog_body
+    - field.field.node.blog.field_like_count
     - field.field.node.blog.field_tags
     - node.type.blog
   module:
+    - blog_like
     - layout_builder
     - layout_discovery
     - user
@@ -16,28 +18,42 @@ third_party_settings:
     allow_custom: false
     sections:
       -
-        layout_id: layout_onecol
+        layout_id: layout_twocol_section
         layout_settings:
           label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 33-67
         components:
-          5060d51d-5fbf-409a-9f93-23b8f5dbb353:
-            uuid: 5060d51d-5fbf-409a-9f93-23b8f5dbb353
-            region: content
+          0fe9826e-f9d0-4e6f-80fd-b47e80ca3607:
+            uuid: 0fe9826e-f9d0-4e6f-80fd-b47e80ca3607
+            region: first
             configuration:
-              id: 'extra_field_block:node:blog:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 5
+              id: related_blogs
+              label: 'Related Blogs'
+              label_display: visible
+              provider: blog_like
+              context_mapping: {  }
+            weight: 0
             additional: {  }
-          2abf2832-d101-494f-8cf5-187bd68e52a3:
-            uuid: 2abf2832-d101-494f-8cf5-187bd68e52a3
-            region: content
+          365b51c8-c466-460c-a6d8-f54fd0bdd1e1:
+            uuid: 365b51c8-c466-460c-a6d8-f54fd0bdd1e1
+            region: second
             configuration:
               id: 'field_block:node:blog:field_blog_body'
+              label: 'Blog Body'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: smart_trim
                 label: above
@@ -52,16 +68,21 @@ third_party_settings:
                     target_blank: false
                     link_trim_only: true
                     class: more-link
-                    text: 'Read more'
+                    text: 'Read More'
                     aria_label: 'Read more about [node:title]'
-                  summary_handler: full
                   trim_options:
                     text: false
                     trim_zero: false
                     replace_tokens: false
                 third_party_settings: {  }
-            weight: 3
+            weight: 0
             additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
           d0660af9-4110-4c49-8d80-c17af885a0ab:
             uuid: d0660af9-4110-4c49-8d80-c17af885a0ab
             region: content
@@ -79,12 +100,80 @@ third_party_settings:
             weight: 4
             additional: {  }
         third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          a0558a44-24ab-40c9-81b4-6c8b89bcc187:
+            uuid: a0558a44-24ab-40c9-81b4-6c8b89bcc187
+            region: second
+            configuration:
+              id: 'field_block:node:blog:uid'
+              label: 'Authored by'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          c3994039-2e67-41da-9a0a-1a750949a164:
+            uuid: c3994039-2e67-41da-9a0a-1a750949a164
+            region: second
+            configuration:
+              id: 'field_block:node:blog:created'
+              label: 'Authored on'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: timestamp
+                label: inline
+                settings:
+                  date_format: olivero_medium
+                  custom_date_format: ''
+                  timezone: ''
+                  tooltip:
+                    date_format: olivero_medium
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
+                    description: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.blog.default
 targetEntityType: node
 bundle: blog
 mode: default
-content: {  }
+content:
+  field_like_count:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_blog_body: true
   field_tags: true
+  like_and_dislike: true
   links: true

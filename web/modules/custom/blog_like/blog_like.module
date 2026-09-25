@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * This file is used for hook.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\blog_like\Form\LikeForm;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_view().
+ */
+function blog_like_node_view(
+  array &$build,
+  NodeInterface $node,
+  EntityViewDisplayInterface $display,
+): void {
+  if ($node->bundle() !== 'blog') {
+    return;
+  }
+
+  $build['blog_like'] = \Drupal::formBuilder()->getForm(
+    LikeForm::class,
+    $node,
+  );
+}

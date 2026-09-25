@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Contains \Drupal\blog_manager\blog_manager.module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_cron().
+ */
+function blog_manager_cron(): void {
+  $one_year_ago = strtotime('-1 year');
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+  $query = $storage->getQuery()
+    ->condition('type', 'blog')
+    ->condition('created', $one_year_ago, '<')
+    ->accessCheck(FALSE);
+
+  $nids = $query->execute();
+
+  foreach ($nids as $nid) {
+    $node = $storage->load($nid);
+
+    $author = $node->getOwner();
+
+    if ($author->hasRole('guest_blogger')) {
+      $node->delete();
+    }
+  }
+}
