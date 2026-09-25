@@ -1,0 +1,28 @@
+uuid: f13ec324-c008-45d8-80c1-6ccb9fb639e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.basic_page.field_page_body
+    - node.type.basic_page
+  module:
+    - text
+    - user
+id: node.basic_page.default
+targetEntityType: node
+bundle: basic_page
+mode: default
+content:
+  field_page_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

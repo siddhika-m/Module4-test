@@ -1,0 +1,21 @@
+uuid: 115bac8d-b51d-4e2c-8092-9e49b226c372
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_author_type
+  module:
+    - options
+    - user
+id: user.user.field_author_type
+field_name: field_author_type
+entity_type: user
+bundle: user
+label: 'Author Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -20,6 +20,12 @@
         "drupal/core-project-message": "^11.4",
         "drupal/core-recipe-unpack": "^11.4",
         "drupal/core-recommended": "^11.4",
+        "drupal/devel": "^5.5",
+        "drupal/register_with_otp": "^1.0",
+        "drupal/smart_trim": "^2.3",
+        "drupal/smtp": "^1.4",
+        "drupal/token_filter": "^2.2",
+        "drupal/views_data_export": "^1.10",
         "drush/drush": "^13.8"
     },
     "conflict": {

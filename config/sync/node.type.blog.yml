@@ -1,0 +1,17 @@
+uuid: f2380661-0e04-422b-bbc2-ca001781a5b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Blog
+type: blog
+description: 'This is a blog content type'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

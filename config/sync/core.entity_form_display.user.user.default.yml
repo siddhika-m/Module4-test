@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - field.field.user.user.field_author_type
+    - field.field.user.user.field_full_name
   module:
-    - image
     - user
 _core:
   default_config_hash: Yj33guGRXeB-uq182k6bwtAUtKGpO17nkYxn8FnjhBM
@@ -16,20 +15,32 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 1
     region: content
-  language:
+    settings: {  }
+    third_party_settings: {  }
+  field_author_type:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_full_name:
+    type: string_textfield
     weight: 0
     region: content
-  timezone:
-    weight: 6
-    region: content
-  user_picture:
-    type: image_image
-    weight: -1
-    region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  language:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

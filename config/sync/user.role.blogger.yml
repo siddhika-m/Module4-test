@@ -1,0 +1,18 @@
+uuid: 3fc2f640-a330-43dd-bc6d-131388c7a7b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.blog
+  module:
+    - node
+id: blogger
+label: Blogger
+weight: 5
+is_admin: false
+permissions:
+  - 'create blog content'
+  - 'delete own blog content'
+  - 'edit any blog content'
+  - 'edit own blog content'
+  - 'view blog revisions'
