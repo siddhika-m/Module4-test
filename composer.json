@@ -25,7 +25,6 @@
         "drupal/smart_trim": "^2.3",
         "drupal/smtp": "^1.4",
         "drupal/token_filter": "^2.2",
-        "drupal/views_data_export": "^1.10",
         "drush/drush": "^13.8"
     },
     "conflict": {

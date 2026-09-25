@@ -1,0 +1,5 @@
+name: 'Blog Manager'
+type: module
+description: 'This module deletes blogs older than a year.'
+package: Custom
+core_version_requirement: ^10 || ^11
